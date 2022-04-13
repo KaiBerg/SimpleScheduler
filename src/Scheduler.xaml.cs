@@ -29,5 +29,13 @@ namespace SimpleSceduler
             this.DataContext = vm;
             vm.DatePicker.SelectedTime = DateTime.Now;
         }
+
+        private void dpPickedDate_CalendarClosed(object sender, RoutedEventArgs e)
+        {
+            if(dpPickedDate.SelectedDate != null)
+            {
+                vm.DatePicker.SelectedTime = (DateTime)dpPickedDate.SelectedDate;
+            }
+        }
     }
 }
