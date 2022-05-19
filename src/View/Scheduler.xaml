@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="SimpleSceduler.View.Scheduler"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lbMonth" Content="{Binding SelectedTime}" ContentStringFormat="{}{0:MMMM yyyy}" HorizontalAlignment="Center" FontSize="24"/>
+        <DatePicker x:Name="dpPickedDate"  HorizontalAlignment="Right" SelectedDate="{Binding SelectedTime}" SelectedDateChanged="dpPickedDate_SelectedDateChanged"></DatePicker>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Monday" Grid.Column="0" HorizontalAlignment="Center"/>
+            <Label Content="Tuesday" Grid.Column="1" HorizontalAlignment="Center"/>
+            <Label Content="Wednesday" Grid.Column="2" HorizontalAlignment="Center"/>
+            <Label Content="Thursday" Grid.Column="3" HorizontalAlignment="Center"/>
+            <Label Content="Friday" Grid.Column="4" HorizontalAlignment="Center"/>
+            <Label Content="Saturday" Grid.Column="5" HorizontalAlignment="Center"/>
+            <Label Content="Sunday" Grid.Column="6" HorizontalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+    </Grid>
+</UserControl>

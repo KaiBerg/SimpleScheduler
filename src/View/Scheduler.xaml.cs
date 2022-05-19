@@ -12,29 +12,29 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SimpleSceduler.ViewModel;
 
-namespace SimpleSceduler
+namespace SimpleSceduler.View
 {
     /// <summary>
     /// Interaction logic for Scheduler.xaml
     /// </summary>
     public partial class Scheduler : UserControl
     {
-        ViewModel vm;
+        MainViewModel vm;
 
         public Scheduler()
         {
             vm = new();
             InitializeComponent();
             this.DataContext = vm;
-            vm.DatePicker.SelectedTime = DateTime.Now;
         }
 
-        private void dpPickedDate_CalendarClosed(object sender, RoutedEventArgs e)
+        private void dpPickedDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(dpPickedDate.SelectedDate != null)
+            if (dpPickedDate.SelectedDate != null)
             {
-                vm.DatePicker.SelectedTime = (DateTime)dpPickedDate.SelectedDate;
+                vm.SelectedTime = dpPickedDate.SelectedDate.Value;
             }
         }
     }
